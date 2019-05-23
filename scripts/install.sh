@@ -2,7 +2,6 @@
 
 set -e
 
-cd $HELM_PLUGIN_DIR
 version="$(cat plugin.yaml | grep "version" | cut -d '"' -f 2)"
 echo "Installing helm-push ${version} ..."
 
@@ -43,7 +42,7 @@ else
 fi
 
 # Install bin
-rm -rf bin && mkdir bin && tar xzvf $filename -C bin > /dev/null && rm -f $filename
+rm -rf bin && mkdir bin && tar xzf $filename -C bin > /dev/null && rm -f $filename
 
 echo "helm-push ${version} is correctly installed."
 echo

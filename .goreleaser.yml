@@ -12,9 +12,6 @@ builds:
 
 archive:
   format: tar.gz
-  files:
-    - LICENSE
-    - plugin.yaml
   replacements:
     amd64: x86_64
     darwin: Darwin
