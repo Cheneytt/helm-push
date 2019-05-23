@@ -42,7 +42,7 @@ else
 fi
 
 # Install bin
-rm -rf bin && mkdir bin && tar xzf $filename -C bin > /dev/null && rm -f $filename
+rm -rf bin && tar xzf $filename > /dev/null && rm -f $filename
 
 echo "helm-push ${version} is correctly installed."
 echo
