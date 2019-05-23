@@ -134,7 +134,7 @@ func (p *pushCmd) push() error {
 }
 
 func handlePushResponse(resp *http.Response) error {
-	if resp.StatusCode != 201 {
+	if resp.StatusCode != 201 && resp.StatusCode != 204 {
 		b, err := ioutil.ReadAll(resp.Body)
 		if err != nil {
 			return err

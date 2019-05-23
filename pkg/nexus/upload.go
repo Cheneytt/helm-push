@@ -9,8 +9,6 @@ import (
 	"net/url"
 	"os"
 	"strings"
-
-	log "github.com/sirupsen/logrus"
 )
 
 // UploadChartPackage uploads a chart package to nexus (POST /service/rest/v1/components?repository=repo-name)
@@ -21,19 +19,14 @@ func (client *Client) UploadChartPackage(chartPackagePath string, force bool) (*
 	}
 
 	repoPath := strings.Split(u.Path, "/")
-	u.Path = "/service/rest/v1/components?repository=" + repoPath[2]
-
-	log.Debug("upload url: ", u.String())
+	u.Path = "/service/rest/v1/components"
 
 	req, err := http.NewRequest("POST", u.String(), nil)
 	if err != nil {
 		return nil, err
 	}
 
-	// Add ?force to request querystring to force an upload if chart version already exists
-	if force {
-		req.URL.RawQuery = "force"
-	}
+	req.URL.RawQuery = "repository=" + repoPath[2]
 
 	err = setUploadChartPackageRequestBody(req, chartPackagePath)
 	if err != nil {
