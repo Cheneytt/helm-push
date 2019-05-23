@@ -8,8 +8,9 @@
 *.test
 
 bin/
-_dist/
+dist/
 _scratch/
 vendor/
 *.tar.gz
 .idea
+
