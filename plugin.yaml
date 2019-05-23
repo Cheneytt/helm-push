@@ -1,5 +1,5 @@
 name: "push"
-version: "v0.1.1"
+version: "0.1.2"
 usage: "Please see https://github.com/Cheneytt/helm-push for usage"
 description: "Push chart package to Nexus"
 command: "$HELM_PLUGIN_DIR/bin/helmpush"

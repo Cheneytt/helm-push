@@ -17,7 +17,7 @@ case "${unameOut}" in
 esac
 
 arch=`uname -m`
-url="https://github.com/Cheneytt/helm-push/releases/download/${version}/helm-push_${version}_${os}_${arch}.tar.gz"
+url="https://github.com/Cheneytt/helm-push/releases/download/v${version}/helm-push_${version}_${os}_${arch}.tar.gz"
 
 if [ "$url" = "" ]
 then
