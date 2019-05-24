@@ -8,7 +8,7 @@ Your nexus should be installed [nexus-repository-helm](https://github.com/sonaty
 
 Install the latest version:
 ```shell
-$ helm plugin install https://github.com/Cheneytt/helm-push
+$ helm plugin install https://github.com/Cheneytt/helm-push.git
 ```
 
 Install a specific version:
